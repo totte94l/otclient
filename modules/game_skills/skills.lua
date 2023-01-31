@@ -100,6 +100,12 @@ function setSkillBase(id, value, baseValue)
     if baseValue <= 0 or value < 0 then
         return
     end
+
+    -- Club and axe fighting. We remove this so dont print cant find error in console.
+    if id == "skillId1" or id == "skillId3" then
+        return true
+    end
+
     local skill = skillsWindow:recursiveGetChildById(id)
     local widget = skill:getChildById('value')
 

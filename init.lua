@@ -8,7 +8,7 @@ AUTO_RELOAD_MODULE = false
 g_game.setForceNewWalkingFormula(false)
 
 -- set latest supported version
-g_game.setLastSupportedVersion(1291)
+g_game.setLastSupportedVersion(1098)
 
 -- setup logger
 g_logger.setLogFile(g_resources.getWorkDir() .. g_app.getCompactName() .. '.log')

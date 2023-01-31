@@ -134,23 +134,9 @@ MiniWindow
       SkillPercentPanel
 
     SkillButton
-      id: skillId1
-      SkillNameLabel
-        !text: tr('Club Fighting')
-      SkillValueLabel
-      SkillPercentPanel
-
-    SkillButton
       id: skillId2
       SkillNameLabel
-        !text: tr('Sword Fighting')
-      SkillValueLabel
-      SkillPercentPanel
-
-    SkillButton
-      id: skillId3
-      SkillNameLabel
-        !text: tr('Axe Fighting')
+        !text: tr('Melee Fighting')
       SkillValueLabel
       SkillPercentPanel
 
