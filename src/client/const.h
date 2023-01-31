@@ -141,6 +141,7 @@ namespace Otc
         LifeLeechAmount,
         ManaLeechChance,
         ManaLeechAmount,
+        DamageIncrease,
         Fatal,
         Dodge,
         Momentum,
