@@ -59,6 +59,13 @@ function onGameEditText(id, itemId, maxLength, text, writer, time)
         desc = tr('You read the following, written on \n%s.\n', time)
     end
 
+    -- Custom code to show the text for !stats
+    if string.sub(text, 1, 6) == 'Damage' then
+        textWindow:setText(tr('Stats'))
+        desc = "Here are your total stats:"
+    end
+
+
     if #text == 0 and not writeable then
         desc = tr('It is empty.')
     elseif writeable then
@@ -73,7 +80,11 @@ function onGameEditText(id, itemId, maxLength, text, writer, time)
     description:setText(desc)
 
     if not writeable then
-        textWindow:setText(tr('Show Text'))
+        if string.sub(text, 1, 6) == 'Damage' then
+            textWindow:setText(tr('Stats'))
+        else
+            textWindow:setText(tr('Show Text'))
+        end
         cancelButton:hide()
         cancelButton:setWidth(0)
         okButton:setMarginRight(0)
