@@ -49,8 +49,8 @@ public:
     const TilePtr& getTile();
     ContainerPtr getParentContainer();
 
-    int getStackPriority();
     int getStackPos();
+    int getStackPriority();
 
     virtual bool isItem() { return false; }
     virtual bool isEffect() { return false; }
@@ -97,17 +97,17 @@ public:
 
     virtual bool isContainer() { return m_thingType->isContainer(); }
 
-    bool isTopGround() const { return m_thingType->isTopGround(); }
-    bool isTopGroundBorder() const { return m_thingType->isTopGroundBorder(); }
-    bool isSingleGround() const { return m_thingType->isSingleGround(); }
-    bool isSingleGroundBorder() const { return m_thingType->isSingleGroundBorder(); }
-
     bool isCommon() { return !isGround() && !isGroundBorder() && !isOnTop() && !isCreature() && !isOnBottom(); }
 
-    bool isGround() { return m_thingType->isGround(); }
-    bool isGroundBorder() { return m_thingType->isGroundBorder(); }
-    bool isOnBottom() { return m_thingType->isOnBottom(); }
-    bool isOnTop() { return m_thingType->isOnTop(); }
+    bool isTopGround() { return !isCreature() && m_thingType->isTopGround(); }
+    bool isTopGroundBorder() { return !isCreature() && m_thingType->isTopGroundBorder(); }
+    bool isSingleGround() { return !isCreature() && m_thingType->isSingleGround(); }
+    bool isSingleGroundBorder() { return !isCreature() && m_thingType->isSingleGroundBorder(); }
+    bool isGround() { return !isCreature() && m_thingType->isGround(); }
+    bool isGroundBorder() { return !isCreature() && m_thingType->isGroundBorder(); }
+    bool isOnBottom() { return !isCreature() && m_thingType->isOnBottom(); }
+    bool isOnTop() { return !isCreature() && m_thingType->isOnTop(); }
+
     bool isMarketable() { return m_thingType->isMarketable(); }
     bool isStackable() { return m_thingType->isStackable(); }
     bool isFluidContainer() { return m_thingType->isFluidContainer(); }
