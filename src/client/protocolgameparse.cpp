@@ -1723,7 +1723,7 @@ void ProtocolGame::parsePlayerSkills(const InputMessagePtr& msg) const
     if (g_game.getFeature(Otc::GameAdditionalSkills)) {
         // Critical, Life Leech, Mana Leech, Dodge, Fatal, Momentum have no level percent, nor loyalty bonus
 
-        const uint8_t lastSkill = g_game.getClientVersion() >= 1281 ? Otc::LastSkill : Otc::DamageIncrease + 1;
+        const uint8_t lastSkill = g_game.getClientVersion() >= 1281 ? Otc::LastSkill : Otc::HealingIncrease + 1;
         for (int_fast32_t skill = Otc::CriticalChance; skill < lastSkill; ++skill) {
             const uint16_t level = msg->getU16();
             const uint16_t baseLevel = msg->getU16();

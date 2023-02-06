@@ -59,6 +59,7 @@ Skill = {
     ManaLeechChance = 11,
     ManaLeechAmount = 12,
     DamageIncrease = 13,
+    HealingIncrease = 14,
 }
 
 North = Directions.North
